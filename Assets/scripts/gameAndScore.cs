@@ -4,6 +4,7 @@ using System.Collections;
 public class gameAndScore : MonoBehaviour 
 {
 	public GameObject rocks;
+	int score = 0;
 
 	// Use this for initialization
 	void Start () 
@@ -14,5 +15,12 @@ public class gameAndScore : MonoBehaviour
 	void CreateObstacle()
 	{
 		Instantiate (rocks);
+		score++;
+	}
+
+	void OnGUI()
+	{
+		GUI.color = Color.black;
+		GUILayout.Label ("Score: " + score.ToString ());
 	}
 }
